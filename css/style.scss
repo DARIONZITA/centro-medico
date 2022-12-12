@@ -1,0 +1,134 @@
+@charset "UTF-8";
+@import "fonts";
+@import "colors";
+@import "funs";
+html,body{
+    overflow-x: hidden;
+    height: 500vh;
+}
+*{
+    padding: 0;
+    margin:0;
+    
+}
+h1{
+    font-family: $font-titulo;
+    text-align: center;
+}
+p{
+    font-family: $font-normal;
+}
+header{
+@include cont_flex(100vw,11px,space-between);
+@include box-sombra;
+position: fixed;
+background-color: white;
+top:0px;
+    font: {
+        family:$font-normal;
+        weight:bold;
+        size: 1.2em;
+    };
+
+   
+    section{
+        @include cont_flex($vertical:center,$number:false);
+        padding: 8px;
+        nav{
+            @include cont_flex($vertical:center,$number:false);
+        
+        }
+        a{
+            padding: 32px 8px;
+            text-decoration: none;
+            color: $color_bl;
+            border-radius: 8px;
+        }
+        a:hover{
+            border-bottom: 2px solid rgba(0, 0, 0, 0.671);
+            background-color: rgba(252, 252, 252, 0.986);
+          
+        }
+        a:focus{
+            color: $color5;
+            border-bottom: 2px solid $color1;
+        }
+        #consultar{
+            background-color: $color1;
+            color: $color_wt;
+            border-radius: 8px;
+            padding: 16px 8px;
+            margin:0px 16px;
+        }
+        #consultar:active{
+            @include box-sombra($dentro:true);
+            color:#afafaf;
+        }
+        img{
+            height: 80%;
+       }
+       p{
+        font: {
+            weight:normal;
+            size: 2em;
+        }
+        color: rgba(0, 0, 0, 0.432);
+       }
+     
+    }
+
+}
+main{
+    @include boxs(100vw,110vh,rgb(0, 217, 255),black);
+    position: relative;
+    z-index: -1;
+    top:64px;
+    background: {
+        image:url('../img/main21.jpg');
+        size:cover ;
+        position: top left;
+    }
+    #caixas{
+        @include cont_flex(100vw,$height:40px,$horizontal:center);
+        position: absolute;
+        bottom: -25%;
+        padding: 0 8px;
+     
+        .bens{
+            @include boxs(400px,400px,$color1,black)
+
+        }
+        #ben3{background-color: $color2;}
+        #ben2{background-color: #8ee49c;}
+        #ben1{background-color: #7bc988;}
+
+    }
+    #container{
+        display: grid;
+        font-size: xx-large;
+        position: absolute;
+        top:20% ;
+        padding-left: 56px;
+        #text-main{    
+            width: 60%;
+            color: $color2;
+            text-shadow: 1px 1px 1px rgb(0, 0, 0);
+            p{
+                color:$color_wt;
+                font-weight: bold;
+            
+            }
+        }
+        #nav-main{
+            @include cont_flex(100vw,300px,$number:false);
+            aside{
+                @include boxs(75px,75px,white,black);
+                margin:0 8px;
+
+            }
+
+        }
+    }
+
+
+}

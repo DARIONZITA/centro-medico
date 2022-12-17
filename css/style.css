@@ -1,4 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Chakra+Petch&family=Kdam+Thmor+Pro&family=Source+Serif+Pro&display=swap");
+@media screen and (max-width: 1150px) and (min-width: 910px) {
+  .bye {
+    display: none;
+  }
+}
+@-webkit-keyframes but-anima {
+  from {
+    transform: translate(80vw, 0);
+    opacity: 10%;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 100%;
+  }
+}
+@keyframes but-anima {
+  from {
+    transform: translate(80vw, 0);
+    opacity: 10%;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 100%;
+  }
+}
 html, body {
   overflow-x: hidden;
   height: 500vh;
@@ -20,6 +45,7 @@ p {
 
 header {
   height: 88px;
+  flex-wrap: nowrap;
   display: flex;
   width: 100vw;
   justify-content: space-between;
@@ -28,12 +54,14 @@ header {
   position: fixed;
   background-color: white;
   top: 0px;
+  z-index: 1;
   font-family: "Chakra Petch", sans-serif;
   font-weight: bold;
   font-size: 1.2em;
 }
 header section {
   height: inherit;
+  flex-wrap: nowrap;
   display: flex;
   width: auto;
   justify-content: flex-start;
@@ -42,6 +70,7 @@ header section {
 }
 header section nav {
   height: inherit;
+  flex-wrap: nowrap;
   display: flex;
   width: auto;
   justify-content: flex-start;
@@ -81,70 +110,276 @@ header section p {
   color: rgba(0, 0, 0, 0.432);
 }
 
-main {
+#main {
   width: 100vw;
-  height: 110vh;
-  background-color: rgb(0, 217, 255);
+  height: 100vh;
+  background-color: #47734E;
   color: black;
   position: relative;
-  z-index: -1;
+  z-index: 0;
   top: 64px;
-  background-image: url("../img/main21.jpg");
+  transition: background-image 1s;
+  text-indent: 30px;
+  background-image: url("../img/m1.jpg");
   background-size: cover;
-  background-position: top left;
+  background-position: center left;
+  background-attachment: fixed;
 }
-main #caixas {
+#main #caixas {
   height: 320px;
+  flex-wrap: nowrap;
   display: flex;
   width: 100vw;
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: -25%;
+  bottom: -30%;
   padding: 0 8px;
+  z-index: 1;
 }
-main #caixas .bens {
+#main #caixas .bens {
   width: 400px;
   height: 400px;
   background-color: #007c15;
-  color: black;
+  color: rgb(255, 255, 255);
+  opacity: 90%;
+  transition: opacity 1s;
+  font-family: "Chakra Petch", sans-serif;
+  text-shadow: 1px 1px 1px rgb(5, 5, 5);
+  font-size: 1.7em;
+  padding: 16px;
 }
-main #caixas #ben3 {
-  background-color: #96F2A6;
+#main #caixas .bens p {
+  text-align: center;
 }
-main #caixas #ben2 {
-  background-color: #8ee49c;
+#main #caixas .bens img {
+  width: 56px;
 }
-main #caixas #ben1 {
-  background-color: #7bc988;
+#main #caixas .bens h1 {
+  font-family: "Abril Fatface", cursive;
 }
-main #container {
+#main #caixas .bens:hover {
+  opacity: 100%;
+  box-shadow: -1px 1px 11px 0px rgba(72, 71, 71, 0.4784313725);
+}
+#main #caixas #ben3 {
+  background-color: #007c15;
+}
+#main #caixas #ben2 {
+  background-color: #00550e;
+}
+#main #caixas #ben1 {
+  background-color: #01420c;
+}
+#main #container {
   display: grid;
   font-size: xx-large;
   position: absolute;
-  top: 20%;
+  top: 15%;
   padding-left: 56px;
 }
-main #container #text-main {
+#main #container #text-main-1 {
+  display: inline;
+}
+#main #container section[id|=text-main] {
+  display: none;
   width: 60%;
   color: #96F2A6;
   text-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
-main #container #text-main p {
+#main #container section[id|=text-main] h1 {
+  font-size: 1.9em;
+}
+#main #container section[id|=text-main] p {
   color: white;
   font-weight: bold;
+  font-size: larger;
 }
-main #container #nav-main {
+#main #container #nav-main {
   height: 300px;
+  flex-wrap: nowrap;
   display: flex;
   width: 100vw;
   justify-content: flex-start;
-  align-items: center;
+  align-items: start;
+  margin-top: 16px;
 }
-main #container #nav-main aside {
-  width: 75px;
-  height: 75px;
+#main #container #nav-main button {
+  width: 72px;
+  height: 72px;
   background-color: white;
   color: black;
+  border-radius: 15px;
+  -webkit-animation-name: but-anima;
+          animation-name: but-anima;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   margin: 0 8px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 64px 64px;
+}
+#main #container #nav-main #mm1 {
+  background-image: url("../img/icon/f0.png");
+}
+#main #container #mm2 {
+  background-image: url("../img/icon/f1.png");
+}
+#main #container #mm3 {
+  background-image: url("../img/icon/f2.png");
+}
+#main #container #mm4 {
+  background-image: url("../img/icon/f3.png");
+}
+
+#servicos {
+  height: 100vh;
+  margin-top: 400px;
+  font-size: x-large;
+}
+#servicos #cont-serv {
+  margin: 0 56px;
+  height: inherit;
+  flex-wrap: wrap;
+  display: flex;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+}
+#servicos #cont-serv aside {
+  transition: box-shadow 0.5s;
+  display: grid;
+  justify-content: center;
+  background-color: rgb(240, 240, 240);
+  margin: 32px;
+  width: 200px;
+  height: 200px;
+  border-radius: 0 16px;
+  position: relative;
+}
+#servicos #cont-serv aside img {
+  justify-self: center;
+}
+#servicos #cont-serv aside p {
+  transform: translateY(64%);
+  background-color: #96F2A6;
+  text-align: center;
+  vertical-align: bottom;
+  align-self: center;
+  padding: 8px;
+  border: 1px solid green;
+}
+#servicos aside:hover {
+  box-shadow: -1px 1px 11px 0px rgba(0, 0, 0, 0.507);
+}
+
+#sobre_nos {
+  display: flex;
+  background-color: rgb(240, 240, 240);
+  line-height: 2em;
+  text-indent: 20px;
+  padding: 56px;
+}
+#sobre_nos h1 {
+  font-size: xx-large;
+  text-align: left;
+  padding: 8px;
+}
+#sobre_nos img {
+  width: 50%;
+}
+#sobre_nos #text_about {
+  padding: 8px;
+}
+
+#instituto {
+  display: flex;
+  height: 85vh;
+}
+#instituto #photos {
+  width: 50%;
+  position: relative;
+}
+#instituto button {
+  position: absolute;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.534);
+  font-weight: bolder;
+  font-size: larger;
+  top: 50%;
+}
+#instituto button:active {
+  background-color: #007c15;
+  color: white;
+}
+#instituto #frente {
+  right: 0;
+}
+#instituto img {
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: width 2s, opacity 1s;
+}
+#instituto #first_img {
+  width: 100%;
+}
+#instituto #localidade {
+  width: 50vw;
+  margin-left: 16px;
+  height: 100%;
+}
+#instituto h1 {
+  text-align: left;
+  font-size: xx-large;
+  margin-bottom: 16px;
+  color: black;
+}
+
+#noticia {
+  background-image: url("../img/m6.jpg");
+  background-size: cover;
+  background-position: 100% 30%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 70vh;
+  font-size: large;
+}
+#noticia #color_noticia {
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(127, 255, 212, 0.649);
+  text-shadow: 1px 1px 1px white;
+}
+#noticia #color_noticia #scroll_noticias {
+  display: flex;
+  justify-content: center;
+}
+#noticia #color_noticia #scroll_noticias .artigo {
+  background-color: #ffffff;
+}
+#noticia #color_noticia #scroll_noticias #n_enfase {
+  width: 50vw;
+}
+#noticia #color_noticia #scroll_noticias #n_enfase .artigo {
+  display: grid;
+  width: 75%;
+  height: 100%;
+  margin: 16px;
+  padding: 8px;
+  border-radius: 4px;
+}
+#noticia #color_noticia #scroll_noticias #n_enfase .artigo .img_noticia {
+  justify-self: center;
+  background-color: #afafaf;
+  width: 90%;
+  height: 200px;
+}
+#noticia #color_noticia #scroll_noticias #n_enfase .artigo .texto_enfase {
+  justify-self: center;
+  width: 90%;
+  align-self: center;
+  height: 200px;
 }/*# sourceMappingURL=style.css.map */

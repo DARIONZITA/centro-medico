@@ -2,13 +2,30 @@
 @import "fonts";
 @import "colors";
 @import "funs";
+@media screen and (max-width: 1150px) and (min-width: 910px){
+    .bye{
+        display: none;
+    }
+    
+}
+@media screen and (max-width: 909px) and (min-width: 90px){
+   
+}
+@keyframes but-anima {
+    from{transform: translate(80vw,0);opacity:10%;}
+    to{transform: translate(0,0);opacity: 100%;}
+    
+}
 html,body{
     overflow-x: hidden;
     height: 500vh;
+    
+   
 }
 *{
     padding: 0;
     margin:0;
+    
     
 }
 h1{
@@ -24,6 +41,7 @@ header{
 position: fixed;
 background-color: white;
 top:0px;
+z-index: 1;
     font: {
         family:$font-normal;
         weight:bold;
@@ -78,57 +96,278 @@ top:0px;
     }
 
 }
-main{
-    @include boxs(100vw,110vh,rgb(0, 217, 255),black);
+
+#main{
+    @include boxs(100vw,100vh,$color4,black);
     position: relative;
-    z-index: -1;
+    z-index: 0;
     top:64px;
+    transition: background-image 1s;
+    text-indent: 30px;
     background: {
-        image:url('../img/main21.jpg');
-        size:cover ;
-        position: top left;
+        image:url('../img/m1.jpg');
+        size:cover;
+        position:center left;
+        attachment: fixed;
+
     }
     #caixas{
         @include cont_flex(100vw,$height:40px,$horizontal:center);
         position: absolute;
-        bottom: -25%;
+        bottom: -30%;
         padding: 0 8px;
+        z-index: 1;
      
         .bens{
-            @include boxs(400px,400px,$color1,black)
-
+            @include boxs(400px,400px,$color1,rgb(255, 255, 255));
+            opacity:90%;
+            transition: opacity 1s;
+            font-family: $font-normal;
+            text-shadow: 1px 1px 1px rgb(5, 5, 5);
+            font-size: 1.7em;
+            padding: 16px;
+            p{
+                text-align: center;
+            }
+           
+            img{
+                width: 56px;
+               
+            }
+            h1{
+                font-family: $font-titulo;
+            }
         }
-        #ben3{background-color: $color2;}
-        #ben2{background-color: #8ee49c;}
-        #ben1{background-color: #7bc988;}
+        .bens:hover{
+            opacity: 100%;
+            @include box-sombra;
+        }
+        #ben3{background-color: $color1;}
+        #ben2{background-color:#00550e;}
+        #ben1{background-color: #01420c;}
 
     }
     #container{
         display: grid;
         font-size: xx-large;
         position: absolute;
-        top:20% ;
+        top:15% ;
         padding-left: 56px;
-        #text-main{    
+        #text-main-1{
+            display: inline;
+        }
+        //text-main
+        section[id|="text-main"]{   
+            
+            display: none; 
             width: 60%;
             color: $color2;
             text-shadow: 1px 1px 1px rgb(0, 0, 0);
+            h1{
+                font-size: 1.9em;;
+            }
             p{
                 color:$color_wt;
                 font-weight: bold;
+                font-size: larger;
             
             }
         }
         #nav-main{
-            @include cont_flex(100vw,300px,$number:false);
-            aside{
-                @include boxs(75px,75px,white,black);
+            @include cont_flex(100vw,300px,$vertical:start,$number:false);
+            margin-top: 16px;
+            
+          
+            button{
+                @include boxs(72px,72px,white,black);
+                border-radius: 15px;
+                animation-name: but-anima;
+                animation-duration: 4s;
                 margin:0 8px;
+                background: {
+                    repeat:no-repeat;
+                    position: center center;
+                    size:64px 64px;
 
+                };
             }
-
-        }
+            #mm1{
+                background-image:url('../img/icon/f0.png');
+            }
+            }
+            #mm2{
+                background-image:url('../img/icon/f1.png');
+            }
+            #mm3{
+                background-image:url('../img/icon/f2.png');
+            }
+            #mm4{
+                background-image:url('../img/icon/f3.png');
+            }
     }
 
 
+}
+#servicos {
+    height: 100vh;
+    margin-top: 400px;
+    font-size: x-large;
+    #cont-serv{
+        margin: 0 56px;
+        @include cont_flex(auto,$horizontal: center,$number: false,$wrap:wrap);
+        aside{
+            transition: box-shadow .5s;
+            display: grid;
+            justify-content: center;
+            background-color:rgb(240, 240, 240);
+            margin: 32px;
+            width: 200px;
+            height: 200px;
+            border-radius: 0 16px;
+            position: relative;
+
+            img{
+                justify-self: center;
+            }
+            p{
+                transform: translateY(64%);
+           
+                background-color: $color2;
+                text-align: center;
+                vertical-align:bottom ;
+                align-self: center;
+                padding: 8px;
+                border: 1px solid green;
+            }
+           
+    }
+
+    }
+    aside:hover{
+        @include box-sombra(rgba(0, 0, 0, 0.507));
+    }
+    
+
+
+}
+#sobre_nos{
+    display: flex;
+    background-color: rgb(240, 240, 240);
+    line-height: 2em;
+    text-indent: 20px;
+    padding: 56px;
+    h1{
+        font-size: xx-large;
+        text-align: left;
+        padding: 8px;
+    }
+    img{
+        width: 50%;
+    }
+    #text_about{
+        padding: 8px;
+    }
+
+}
+#instituto{
+    display: flex;
+    height: 85vh;
+    #photos{
+        width: 50%;
+        position: relative;
+        
+    }
+    button{
+        position: absolute;
+        padding: 16px;
+        background-color: rgba(0, 0, 0, 0.534);
+        font-weight: bolder;
+        font-size: larger;
+        top: 50%;
+    }
+    button:active{
+        background-color: $color1;
+        color: white;
+    }
+    #frente{
+        right: 0;
+    }
+    img{
+        width: 0%;
+        height: 100%;
+        position: absolute;
+        top:0;
+        transition: width 2s, opacity 1s;
+
+    }
+    #first_img{
+        width: 100%;
+       
+    }
+    #localidade{
+        width: 50vw;
+       margin-left: 16px;
+        height: 100%;
+    }
+    h1{
+        text-align: left;
+        font-size: xx-large;
+        margin-bottom: 16px;
+        color: $color_bl;
+    }
+
+
+}
+#noticia{
+    background-image: url('../img/m6.jpg');
+    background-size:cover;
+    background-position:100% 30%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 70vh;
+    font-size: large;
+    #color_noticia{
+        position: absolute;
+        width: 100%;
+        height: inherit;
+        background-color: rgba(127, 255, 212, 0.649);
+        text-shadow: 1px 1px 1px $color_wt;
+        #scroll_noticias{
+            display: flex;
+            justify-content: center;
+
+            .artigo{
+                background-color: #ffffff;
+                .texto_enfase{
+                    
+                }
+            }
+            #n_enfase{
+                width: 50vw;
+                .artigo{
+                    display: grid;
+                    width: 75%;
+                    height: 100%;
+                    margin: 16px;
+                    padding: 8px;
+                    border-radius: 4px;
+                    .img_noticia{
+                        justify-self: center;
+                        background-color: #afafaf;
+                        width: 90%;
+                        height: 200px;
+                        
+                    }
+                    .texto_enfase{
+                        justify-self: center;
+                        width: 90%;
+                        align-self: center;
+                        height: 200px;
+                    }
+                }
+            }
+        }
+
+    }
+    
 }

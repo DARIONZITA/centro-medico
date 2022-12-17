@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centro Médico MED-AZES</title>
+    <script src="script.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/icon3.png" type="image/x-icon">
 </head>
-<body>
+<body onload="start()">
     <header>
         <section>
         <img id="icon_header" src="img/icon2.png" alt="">
@@ -16,8 +17,8 @@
         <nav>
             <a href="#">Início</a>
             <a href="#">Serviços</a>
-            <a href="#">Corpo clinico</a>
-            <a href="#">Instituição</a>
+            <a href="#" class="bye">Corpo clinico</a>
+            <a href="#" class="bye">Instituição</a>
             <a href="#">Quem nós somos</a>
         </nav>
     </section>
@@ -27,25 +28,137 @@
     </section>
       
     </header>
-    <main>
+    <!--primeira section-->
+    <main id="main">
         <div id="container">
-            <section id="text-main">
-                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
-                <p>será que da para entender.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis alias accusantium est, nulla blanditiis, tenetur ratione, minima laborum quaerat suscipit laudantium odit veritatis amet hic nobis. Ratione adipisci beatae corporis?</p>
+            <section id="text-main-1">
+                <h1>Primeiro texto</h1>
+                <p>Uma frase chamativa, o primeiro contacto com o usuário que dá ênfase ao site etrasmite confiança.</p>
+                <p>Uma frase chamativa, o primeiro contacto com o usuário que dá ênfase ao site etrasmite confiança</p>
+            </section>
+            <section id="text-main-2">
+                <h1>segundo texto</h1>
+                <p>um contéudo adcional, não muito relevante mas um conhecimento a se saber de preferencia que esteja em conetividade com o seu icone</p>
+                <p>Neste caso, de confiança, comprimisso, etc,Neste caso, de confiança, comprimisso, etc</p>
+            </section>
+            <section id="text-main-3">
+                <h1>Terceiro texto</h1>
+                <p>um contéudo adcional, não muito relevante mas um conhecimento a se saber de preferencia que esteja em conetividade com o seu icone</p>
+                <p>Neste caso falar um pouco da equipe e funcionarios da do centro.Neste caso falar um pouco da equipe e funcionarios da do centro.</p>
+            </section>
+            <section id="text-main-4">
+                <h1>quarto texto.</h1>
+                <p>um contéudo adcional, não muito relevante mas um conhecimento a se saber de preferencia que esteja em conetividade com o seu icone</p>
+                <p>Neste caso falar das condições que o centro apresenta</p>
             </section>
             <section id="nav-main">
-                <aside id="mm1"></aside>
-                <aside id="mm2"></aside>
-                <aside id="mm3"></aside>
-                <aside id="mm4"></aside>
+                <button onclick="slide(1)" id="mm1"></button>
+                <button onclick="slide(2)" id="mm2"></button>
+                <button onclick="slide(3)" id="mm3"></button>
+                <button onclick="slide(4)" id="mm4"></button>
             </section>
         </div>
         <section id="caixas">
-            <aside id="ben1" class="bens"></aside>
-            <aside id="ben2" class="bens"></aside>
-            <aside id="ben3" class="bens"></aside>
+            <aside id="ben1" class="bens">
+                <img src="img/arquvo2.png" alt="">
+                <h1>Exemplo-1</h1>
+                <p>horario de funcionamento</p>
+                <hr>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit</p><hr><p>Vel labore tempore maxime similique, nobis at animi quaerat corporis qui facere expedita eius, quas laborum suscipit doloribus architecto alias.</p>
+            </aside>
+            <aside id="ben2" class="bens">
+                <img src="img/arquvo2.png" alt="">
+                <h1>Exemplo-2</h1>
+                <p>fale connosco</p>
+                <p>números</p>
+                <p>números</p>
+                <p>números</p>
+                <p>números</p>
+                <p>números</p>
+                <p>números</p>
+            </aside>
+            <aside id="ben3" class="bens">
+                <img src="img/arquvo2.png" alt="">
+                <h1>Exemplo-3</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, asperiores expedita temporibus quod laborum quibusdam, enim modi in ex atque omnis accusamus consequatur dignissimos praesentium.
+                </p>
+            </aside>
         </section>
     </main>
+    <section id="servicos">
+        <h1>Serviços</h1>
+        <div id="cont-serv">
+            <aside><img src="img/arquivo.png" alt="imagem dos serviços"><p>serviço1serviço1</p></aside>
+            <aside><img src="img/arquivo.png" alt="imagem dos serviços"><p>serviço2</p></aside>
+            <aside><img src="img/arquivo.png" alt="imagem dos serviços"><p>serviço3</p></aside>
+            <aside><img src="img/arquivo.png" alt="imagem dos serviços"><p>serviço4</p></aside>
+            <aside><img src="img/arquivo.png" alt="imagem dos serviços"><p>serviço5</p></aside>
+            <aside><img src="img/arquivo.png" alt="imagem dos serviços"><p>serviço6</p></aside>
+            <aside><img src="img/arquivo.png" alt="imagem dos serviços"><p>serviço7</p></aside>
+            <aside><img src="img/arquivo.png" alt="imagem dos serviços"><p>serviço8</p></aside>
+            <aside><img src="img/arquivo.png" alt="imagem dos serviços"><p>serviço9</p></aside>
+            <aside><img src="img/arquivo.png" alt="imagem dos serviços"><p>serviço10</p></aside>
+        </div>
+    </section>
+    <section id="sobre_nos">
+        <img src="img/about.svg" alt="">
+        <aside id="text_about">
+            <h1>Quem somos nós</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus aliquid nesciunt alias neque eveniet blanditiis asperiores aspernatur numquam maiores, esse dolor, unde molestiae ab autem, beatae quaerat inventore minus quae?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit enim dolores soluta cum, optio corrupti neque sapiente. Cumque tenetur beatae excepturi veniam numquam, unde nesciunt molestias? Quia hic provident asperiores?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae, fuga ab officia natus, dicta modi neque aspernatur reprehenderit dignissimos perspiciatis illum quisquam nisi iste alias sapiente. Consectetur quos porro iure?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia maiores molestias aut aperiam! Facilis, magnam voluptate? Commodi accusantium natus magni optio, dolores sequi autem in, pariatur nisi doloremque sit fuga?</p>
+        </aside>
+    </section>
+    <section id="instituto">
+        <aside id="photos">
+            <img id="first_img" class="slide_img" src="img/imagens/img3.png" alt="imagem imagem dos serviçosdo centro">
+            <img class="slide_img" src="img/imagens/img4.png" alt="imagem do centro">
+            <img class="slide_img" src="img/imagens/img5.png" alt="imagem do centro">
+            <img class="slide_img" src="img/imagens/img3.png" alt="imagem do centro">
+            <img class="slide_img" src="img/imagens/img4.png" alt="imagem do centro">
+            <button onclick="slide_2(-1)" id="tras">&lt</button>
+            <button onclick="slide_2(1)" id="frente">&gt</button>
+    
+        </aside>
+        <aside id="localidade">
+            <h1>Localização</h1>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11476.231078751976!2d13.490256214053126!3d-8.884016479067737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-PT!2sao!4v1671300904364!5m2!1spt-PT!2sao" width="95%" height="80%" style="border:0;border-radius: 16px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"> <p>O seu browser não suporta o mapa, por isso a imagem é estática</p><img src="" alt=""></iframe>
+        </aside>
+    </section>
+    <section id="noticia">
+        <div id="color_noticia">
+            
+        <aside id="scroll_noticias">
+            <section id="n_enfase">
+                <aside class="artigo">
+                    <img class="img_noticia" src="" alt="">
+                    <div class="texto_enfase"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo ducimus, mollitia alias hic rem fugiat exercitationem voluptates sequi eligendi error pariatur magni veniam id corporis, cumque iste labore necessitatibus eaque.</p></div>
+                </aside>
+            </section>
+            <section id="n_recente">
+                <aside class="artigo">
+                    <img class="img_noticia" src="" alt="">
+                    <div class="texto_enfase"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, delectus labore nobis officiis doloribus quibusdam beatae deleniti et aspernatur hic dolorem cum distinctio commodi officia fuga! Quas fuga reiciendis minus?</p></div>
+                </aside>
+                <aside class="artigo">
+                    <img class="img_noticia" src="" alt="">
+                    <div class="texto_enfase"></div>
+                </aside>
+                <aside class="artigo">
+                    <img class="img_noticia" src="" alt="">
+                    <div class="texto_enfase"></div>
+                </aside>
+                <aside class="artigo">
+                    <img class="img_noticia" src="" alt="">
+                    <div class="texto_enfase"></div>
+                </aside>
+    
+            </section>
+        </aside>
+        </div>
+        
+    </section>
     <aside id="'whatsapp" ></aside>
+   
 </body>
 </html>

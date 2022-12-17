@@ -1,10 +1,11 @@
-@mixin cont_flex($width: auto,$height: inherit,$horizontal : flex-start,$vertical:center,$number: true){
+@mixin cont_flex($width: auto,$height: inherit,$horizontal : flex-start,$vertical:center,$number: true,$wrap: nowrap){
     @if $number == false {
         height: $height;
     }
     @else{
         height: $height*8;
     }
+    flex-wrap: $wrap;
     display: flex;
     width: $width;
     justify-content: $horizontal;
@@ -12,6 +13,7 @@
 }
 @mixin con_grid($colunas,$space,$horizontal,$vertical){
     grid-template-columns: $colunas;
+    display: grid;
     gap: $space;
     justify-content: $horizontal;
     align-content: $vertical;

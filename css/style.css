@@ -26,7 +26,22 @@
 }
 html, body {
   overflow-x: hidden;
-  height: 500vh;
+  scroll-behavior: smooth;
+  height: auto;
+}
+
+body::-webkit-scrollbar {
+  background-color: #96F2A6;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #007c15;
+  border-radius: 16px;
+  margin: 0.5px;
+}
+
+body::-webkit-scrollbar-button {
+  background-color: rgba(0, 0, 0, 0.548);
 }
 
 * {
@@ -250,7 +265,6 @@ header section p {
   transition: box-shadow 0.5s;
   display: grid;
   justify-content: center;
-  background-color: rgb(240, 240, 240);
   margin: 32px;
   width: 200px;
   height: 200px;
@@ -307,6 +321,7 @@ header section p {
   font-weight: bolder;
   font-size: larger;
   top: 50%;
+  border-radius: 50%;
 }
 #instituto button:active {
   background-color: #007c15;
@@ -345,41 +360,128 @@ header section p {
   background-repeat: no-repeat;
   height: 70vh;
   font-size: large;
+  position: relative;
 }
 #noticia #color_noticia {
   position: absolute;
+  top: 0;
   width: 100%;
   height: inherit;
   background-color: rgba(127, 255, 212, 0.649);
   text-shadow: 1px 1px 1px white;
 }
+#noticia #color_noticia time {
+  color: #257332;
+  font-size: smaller;
+}
 #noticia #color_noticia #scroll_noticias {
   display: flex;
   justify-content: center;
+  height: inherit;
+}
+#noticia #color_noticia #scroll_noticias .artigo:hover {
+  box-shadow: -1px 1px 11px 0px rgba(72, 71, 71, 0.4784313725);
+}
+#noticia #color_noticia #scroll_noticias h1 {
+  text-align: left;
 }
 #noticia #color_noticia #scroll_noticias .artigo {
-  background-color: #ffffff;
+  background-color: #f0f0f0;
+  padding: 8px;
+  border-radius: 16px;
+}
+#noticia #color_noticia #scroll_noticias .artigo .img_noticia {
+  margin: 16px;
+  border-radius: 4px;
+}
+#noticia #color_noticia #scroll_noticias #n_recente::-webkit-scrollbar {
+  background-color: transparent;
+}
+#noticia #color_noticia #scroll_noticias #n_recente::-webkit-scrollbar-thumb {
+  background-color: #47734E;
+  border-radius: 16px;
+  margin: 5px;
+}
+#noticia #color_noticia #scroll_noticias #n_recente {
+  padding-top: 24px;
+  display: grid;
+  width: 50vw;
+  justify-content: flex-start;
+  align-content: start-end;
+  overflow: auto;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(255, 255, 255));
+}
+#noticia #color_noticia #scroll_noticias #n_recente #ver_mais_noticias {
+  text-align: end;
+  color: #007c15;
+  font-weight: bolder;
+  font-size: large;
+}
+#noticia #color_noticia #scroll_noticias #n_recente .artigo {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  margin: 16px 0;
+}
+#noticia #color_noticia #scroll_noticias #n_recente .artigo .img_noticia {
+  background-color: #afafaf;
+  width: 500px;
+  height: 100px;
+  background-image: url("../img/arquvo2.png");
+  background-repeat: no-repeat;
 }
 #noticia #color_noticia #scroll_noticias #n_enfase {
+  padding: 24px;
   width: 50vw;
+  height: inherit;
+}
+#noticia #color_noticia #scroll_noticias #n_enfase h1 {
+  font-size: x-large;
 }
 #noticia #color_noticia #scroll_noticias #n_enfase .artigo {
   display: grid;
+  justify-content: center;
+  align-content: flex-start;
   width: 75%;
-  height: 100%;
+  height: auto;
   margin: 16px;
-  padding: 8px;
-  border-radius: 4px;
+  padding: 2px;
+  border-radius: 1px;
 }
 #noticia #color_noticia #scroll_noticias #n_enfase .artigo .img_noticia {
   justify-self: center;
   background-color: #afafaf;
-  width: 90%;
-  height: 200px;
+  width: 100%;
+  height: 250px;
+  background-image: url("../img/m7.jpg");
+  background-size: cover;
 }
 #noticia #color_noticia #scroll_noticias #n_enfase .artigo .texto_enfase {
   justify-self: center;
   width: 90%;
   align-self: center;
-  height: 200px;
+  padding: 16px;
+}
+
+footer {
+  height: 50vh;
+  background-color: #257332;
+  display: grid;
+  color: white;
+  padding: 0 56px;
+}
+footer #bottom_footer {
+  background-color: #47734E;
+  display: flex;
+  align-self: flex-end;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgb(0, 0, 0);
+}
+footer a {
+  color: #ffffff;
+  font-size: normal;
+  font-family: "Chakra Petch", sans-serif;
+  margin: 8px;
 }/*# sourceMappingURL=style.css.map */

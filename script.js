@@ -1,4 +1,4 @@
-let before=1;
+let before=3;
 let now;
 let cont;
 function start(){
@@ -49,7 +49,7 @@ function slide(n){
 function começar_auto(){
      clearInterval(cont)
      cont = setInterval(()=>{
-        before==4 ?before=1 :now=before+1
+    before==4 ?now=1 :now=before+1
         slide(now)
     },15000)
 }
@@ -59,7 +59,8 @@ function slide_2(n){
     imgs[now_slide_2].style.opacity='50%'
     imgs[now_slide_2].style.width='0'
  
-    now_slide_2==4?now_slide_2=0:now_slide_2+=n
+    now_slide_2==4?now_slide_2=0:now_slide_2+=n;
+    now_slide_2==-1?now_slide_2=3:false;
     imgs[now_slide_2].style.opacity='100%'
     imgs[now_slide_2].style.width='100%'
 

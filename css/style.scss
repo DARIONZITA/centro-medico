@@ -25,6 +25,7 @@ html,body{
 }
 body::-webkit-scrollbar{
     background-color: $color2;
+    width: 12px;
 
 }
 body::-webkit-scrollbar-thumb{
@@ -468,6 +469,35 @@ footer{
     display: grid;
     color: white;
     padding: 0 56px;
+    text-shadow: 1px 1px 1px black;
+    h1{
+        font-weight: lighter;
+        font-size: x-large;
+
+    }
+    p{
+        text-indent: 8px;
+    }
+    #top_footer{
+        display:flex;
+        #siga{
+            display: grid;
+            ul{
+                display: flex;
+                align-items: flex-start;
+                h1{
+                    display: inline;
+                }
+                img{
+                    width:40px;
+                }
+            }
+        }
+        aside{
+            margin: 56px;
+            display: grid;
+        }
+    }
     #bottom_footer{
         background-color: $color4;
         display:flex;
@@ -484,6 +514,10 @@ footer{
         font-size: normal;
         font-family: $font-normal;
         margin: 8px;
+    }
+    li{
+        list-style-type: none;
+        padding: 4px;
     }
 
 }

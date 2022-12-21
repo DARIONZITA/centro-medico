@@ -32,6 +32,7 @@ html, body {
 
 body::-webkit-scrollbar {
   background-color: #96F2A6;
+  width: 12px;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -469,6 +470,34 @@ footer {
   display: grid;
   color: white;
   padding: 0 56px;
+  text-shadow: 1px 1px 1px black;
+}
+footer h1 {
+  font-weight: lighter;
+  font-size: x-large;
+}
+footer p {
+  text-indent: 8px;
+}
+footer #top_footer {
+  display: flex;
+}
+footer #top_footer #siga {
+  display: grid;
+}
+footer #top_footer #siga ul {
+  display: flex;
+  align-items: flex-start;
+}
+footer #top_footer #siga ul h1 {
+  display: inline;
+}
+footer #top_footer #siga ul img {
+  width: 40px;
+}
+footer #top_footer aside {
+  margin: 56px;
+  display: grid;
 }
 footer #bottom_footer {
   background-color: #47734E;
@@ -484,4 +513,8 @@ footer a {
   font-size: normal;
   font-family: "Chakra Petch", sans-serif;
   margin: 8px;
+}
+footer li {
+  list-style-type: none;
+  padding: 4px;
 }/*# sourceMappingURL=style.css.map */

@@ -23,7 +23,7 @@ function slide(n){
     before=n
     switch(n){
         case 1:
-            main.style.backgroundImage ="url('../img/m1.jpg')"
+            main.style.backgroundImage ="url(./img/m1.jpg)"
             text1.style.display='inline'
            
             break

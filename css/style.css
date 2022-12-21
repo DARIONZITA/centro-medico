@@ -118,7 +118,8 @@ header section #consultar:active {
   color: #afafaf;
 }
 header section img {
-  height: 80%;
+  width: 20vw;
+  margin-top: 8px;
 }
 header section p {
   font-weight: normal;
@@ -389,7 +390,6 @@ header section p {
 #noticia #color_noticia #scroll_noticias .artigo {
   background-color: #f0f0f0;
   padding: 8px;
-  border-radius: 16px;
 }
 #noticia #color_noticia #scroll_noticias .artigo .img_noticia {
   margin: 16px;
@@ -410,11 +410,10 @@ header section p {
   justify-content: flex-start;
   align-content: start-end;
   overflow: auto;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(255, 255, 255));
 }
 #noticia #color_noticia #scroll_noticias #n_recente #ver_mais_noticias {
   text-align: end;
-  color: #007c15;
+  color: #47734E;
   font-weight: bolder;
   font-size: large;
 }
@@ -505,8 +504,8 @@ footer #bottom_footer {
   align-self: flex-end;
   justify-content: space-between;
   padding: 16px;
-  border-radius: 16px;
   border: 1px solid rgb(0, 0, 0);
+  box-shadow: inset 3px 5px 7px 0px rgba(0, 0, 0, 0.466);
 }
 footer a {
   color: #ffffff;

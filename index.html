@@ -8,27 +8,30 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/icon3.png" type="image/x-icon">
+
 </head>
+
 <body onload="start()">
-    <header>
+   <header>
         <section>
-        <img id="icon_header" src="img/logo.svg" alt="">
+        <a href="index.html#main"><img id="icon_header" src="img/logo.svg" alt=""></a>
         <p>|</p>
         <nav>
-            <a href="#">Início</a>
-            <a href="#">Serviços</a>
+            <a href="#main">Início</a>
+            <a href="#servicos">Serviços</a>
             <a href="#" class="bye">Corpo clinico</a>
-            <a href="#" class="bye">Instituição</a>
-            <a href="#">Quem nós somos</a>
+            <a href="instit.html" class="bye">Instituição</a>
+            <a href="#sobre_nos">Quem nós somos</a>
         </nav>
     </section>
+
     <section>
-            <a href="#">Contactar</a>
+            <a href="#noticia" style="padding: 16px;">Blog</a>
             <a id='consultar' href="#">Marcar Consulta</a>
     </section>
       
     </header>
-    <!--primeira section-->
+            <!--primeira section-->
     <main id="main">
         <div id="container">
             <section id="text-main-1">
@@ -108,22 +111,6 @@
             <h1>Quem somos nós</h1>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus aliquid nesciunt alias neque eveniet blanditiis asperiores aspernatur numquam maiores, esse dolor, unde molestiae ab autem, beatae quaerat inventore minus quae?</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit enim dolores soluta cum, optio corrupti neque sapiente. Cumque tenetur beatae excepturi veniam numquam, unde nesciunt molestias? Quia hic provident asperiores?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae, fuga ab officia natus, dicta modi neque aspernatur reprehenderit dignissimos perspiciatis illum quisquam nisi iste alias sapiente. Consectetur quos porro iure?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia maiores molestias aut aperiam! Facilis, magnam voluptate? Commodi accusantium natus magni optio, dolores sequi autem in, pariatur nisi doloremque sit fuga?</p>
-        </aside>
-    </section>
-    <section id="instituto">
-        <aside id="photos">
-            <img id="first_img" class="slide_img" src="img/imagens/img3.png" alt="imagem imagem dos serviçosdo centro">
-            <img class="slide_img" src="img/imagens/img4.png" alt="imagem do centro">
-            <img class="slide_img" src="img/imagens/img5.png" alt="imagem do centro">
-            <img class="slide_img" src="img/imagens/img3.png" alt="imagem do centro">
-            <img class="slide_img" src="img/imagens/img4.png" alt="imagem do centro">
-            <button onclick="slide_2(-1)" id="tras">&lt</button>
-            <button onclick="slide_2(1)" id="frente">&gt</button>
-    
-        </aside>
-        <aside id="localidade">
-            <h1>Localização</h1>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11476.231078751976!2d13.490256214053126!3d-8.884016479067737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-PT!2sao!4v1671300904364!5m2!1spt-PT!2sao" width="95%" height="80%" style="border:0;border-radius: 16px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"> <p>O seu browser não suporta o mapa, por isso a imagem é estática</p><img src="" alt=""></iframe>
         </aside>
     </section>
     <section id="noticia">
@@ -212,12 +199,14 @@
         <aside id="siga">
             <h1>Siga-nos</h1>
             <ul>
-                <li><img src="img/facebook.svg" alt=""></li>
-                <li><img src="img/instagram.svg" alt=""></li>
+                <li><img src="img/facebook.svg" alt=""><p>facebook</p></li>
+                <li><img src="img/instagram.svg" alt=""><p>instagram</p></li>
             </ul>
 
        </aside>
-        <aside id="logo"></aside>
+        <aside id="logo">
+            <img src="img/logo-white.svg" alt="">
+        </aside>
       
 
     </section>

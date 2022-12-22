@@ -2,6 +2,7 @@ let before=3;
 let now;
 let cont;
 function start(){
+
     slide(1)
 }
 
@@ -28,15 +29,15 @@ function slide(n){
            
             break
         case 2:
-            main.style.backgroundImage ="url('../img/m3.jpg')";
+            main.style.backgroundImage ="url(./img/m3.jpg)";
             text2.style.display='inline'
            break
         case 3:
-            main.style.backgroundImage ="url('../img/m5.jpg')"
+            main.style.backgroundImage ="url(./img/m5.jpg)"
             text3.style.display='inline'
            break
         case 4:
-            main.style.backgroundImage ="url('../img/m2.jpg')"
+            main.style.backgroundImage ="url(./img/m2.jpg)"
             main.style.backgroundPosition='50% 50%'
             text4.style.display='inline'
            break

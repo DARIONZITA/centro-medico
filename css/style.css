@@ -59,6 +59,10 @@ p {
   font-family: "Chakra Petch", sans-serif;
 }
 
+a:-webkit-any-link:focus-visible {
+  outline: none;
+}
+
 header {
   height: 88px;
   flex-wrap: nowrap;
@@ -92,19 +96,19 @@ header section nav {
   justify-content: flex-start;
   align-items: center;
 }
+header section nav a:hover {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.671);
+  background-color: rgba(252, 252, 252, 0.986);
+}
+header section nav a:focus {
+  color: #257332;
+  border-bottom: 2px solid #007c15;
+}
 header section a {
   padding: 32px 8px;
   text-decoration: none;
   color: black;
   border-radius: 8px;
-}
-header section a:hover {
-  border-bottom: 2px solid rgba(0, 0, 0, 0.671);
-  background-color: rgba(252, 252, 252, 0.986);
-}
-header section a:focus {
-  color: #257332;
-  border-bottom: 2px solid #007c15;
 }
 header section #consultar {
   background-color: #007c15;
@@ -309,11 +313,14 @@ header section p {
 }
 
 #instituto {
-  display: flex;
-  height: 85vh;
+  display: grid;
+  padding-top: 10vh;
+  height: 210vh;
+  justify-content: center;
 }
 #instituto #photos {
-  width: 50%;
+  justify-self: center;
+  width: 90vw;
   position: relative;
 }
 #instituto button {
@@ -343,12 +350,13 @@ header section p {
   width: 100%;
 }
 #instituto #localidade {
-  width: 50vw;
+  justify-self: center;
+  width: auto;
   margin-left: 16px;
-  height: 100%;
+  height: auto;
 }
 #instituto h1 {
-  text-align: left;
+  text-align: center;
   font-size: xx-large;
   margin-bottom: 16px;
   color: black;
@@ -479,24 +487,40 @@ footer p {
   text-indent: 8px;
 }
 footer #top_footer {
-  display: flex;
+  display: grid;
+  width: 100vw;
+  grid-template-columns: 250px 300px 250px auto;
 }
 footer #top_footer #siga {
   display: grid;
+  height: 100px;
 }
 footer #top_footer #siga ul {
-  display: flex;
+  display: grid;
   align-items: flex-start;
 }
 footer #top_footer #siga ul h1 {
   display: inline;
 }
 footer #top_footer #siga ul img {
-  width: 40px;
+  width: 32px;
+}
+footer #top_footer #siga li {
+  display: flex;
+  align-items: center;
+  font-weight: bolder;
+  font-size: large;
 }
 footer #top_footer aside {
   margin: 56px;
   display: grid;
+}
+footer #top_footer #logo {
+  justify-self: flex-end;
+}
+footer #top_footer #logo img {
+  width: 450px;
+  padding-right: 100px;
 }
 footer #bottom_footer {
   background-color: #47734E;
@@ -506,6 +530,7 @@ footer #bottom_footer {
   padding: 16px;
   border: 1px solid rgb(0, 0, 0);
   box-shadow: inset 3px 5px 7px 0px rgba(0, 0, 0, 0.466);
+  width: 90vw;
 }
 footer a {
   color: #ffffff;
@@ -516,4 +541,8 @@ footer a {
 footer li {
   list-style-type: none;
   padding: 4px;
+}
+
+iframe {
+  width: 100vh;
 }/*# sourceMappingURL=style.css.map */

@@ -16,19 +16,22 @@
         <section>
         <a href="index.html#main"><img id="icon_header" src="img/logo.svg" alt=""></a>
         <p>|</p>
-        <nav>
+        <nav class="bye">
             <a href="#main">Início</a>
             <a href="#servicos">Serviços</a>
-            <a href="#" class="bye">Corpo clinico</a>
-            <a href="instit.html" class="bye">Instituição</a>
+            <a href="#" >Corpo clinico</a>
+            <a href="instit.html">Instituição</a>
             <a href="#sobre_nos">Quem nós somos</a>
         </nav>
     </section>
 
-    <section>
+    <section class="bye">
             <a href="#noticia" style="padding: 16px;">Blog</a>
             <a id='consultar' href="#">Marcar Consulta</a>
     </section>
+    <section class="mostra">
+        <button id="btn_menu" onclick="menu(-1)"></button>
+    </sectionc>
       
     </header>
             <!--primeira section-->
@@ -188,12 +191,26 @@
         <aside id="contactar_footer">
             <h1>Fale connosco</h1>
             <ul>
-                <li><a href="">Marcar consulta</a></li>
-                <li><a href="">Contactar</a></li>
-                <li><p>numero atendimento</p></li>
-                <li><p>numero whatsapp</p></li>
-                <li><p>E-mail</p></li>
-                <li><p>Endereço</p></li>
+                <li>
+                    <img src="img/footer/consulta.png" alt="">
+                    <a href="">Marcar consulta</a>
+                </li>
+                <li>
+                    <img src="img/footer/email.png" alt="">
+                    <p>exemplo@gmail.com</p>
+                </li>
+                <li>
+                    <img src="img/footer/telefone.png" alt="">
+                    <a href="">Contactar</a>
+                </li>
+                <li style="width: 300px;display: inline;">
+                    <p>998 765 321</p>
+                    <p>992 321 348-Whatsapp</p>
+                </li>
+
+                <li>
+                    <address>Luanda, Comarca de Viana</address>
+                </li>
             </ul>
         </aside> 
         <aside id="siga">

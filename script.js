@@ -66,3 +66,15 @@ function slide_2(n){
     imgs[now_slide_2].style.width='100%'
 
 }
+let i_btn=1;
+function menu(n){
+    i_btn*=n
+    let btn_menu = document.getElementById('btn_menu')
+    console.log(btn_menu)
+    if(i_btn==-1){
+    btn_menu.style.backgroundImage="url(../img/close_menu.png)"
+    }
+    else{
+        btn_menu.style.backgroundImage="url(../img/menu.png)"
+    }
+}

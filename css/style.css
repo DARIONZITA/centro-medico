@@ -1,9 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Chakra+Petch&family=Kdam+Thmor+Pro&family=Source+Serif+Pro&display=swap");
-@media screen and (max-width: 1150px) and (min-width: 910px) {
-  .bye {
-    display: none;
-  }
-}
 @-webkit-keyframes but-anima {
   from {
     transform: translate(80vw, 0);
@@ -48,6 +43,10 @@ body::-webkit-scrollbar-button {
 * {
   padding: 0;
   margin: 0;
+}
+
+.mostra {
+  display: none;
 }
 
 h1 {
@@ -123,6 +122,7 @@ header section #consultar:active {
 }
 header section img {
   width: 20vw;
+  min-width: 200px;
   margin-top: 8px;
 }
 header section p {
@@ -472,7 +472,7 @@ header section p {
 }
 
 footer {
-  height: 50vh;
+  height: auto;
   background-color: #257332;
   display: grid;
   color: white;
@@ -482,6 +482,7 @@ footer {
 footer h1 {
   font-weight: lighter;
   font-size: x-large;
+  text-align: left;
 }
 footer p {
   text-indent: 8px;
@@ -491,25 +492,25 @@ footer #top_footer {
   width: 100vw;
   grid-template-columns: 250px 300px 250px auto;
 }
-footer #top_footer #siga {
-  display: grid;
-  height: 100px;
-}
-footer #top_footer #siga ul {
+footer #top_footer ul {
   display: grid;
   align-items: flex-start;
 }
-footer #top_footer #siga ul h1 {
+footer #top_footer ul h1 {
   display: inline;
 }
-footer #top_footer #siga ul img {
+footer #top_footer ul img {
   width: 32px;
 }
-footer #top_footer #siga li {
+footer #top_footer li {
   display: flex;
   align-items: center;
   font-weight: bolder;
   font-size: large;
+}
+footer #top_footer #siga {
+  display: grid;
+  height: 100px;
 }
 footer #top_footer aside {
   margin: 56px;
@@ -537,6 +538,7 @@ footer a {
   font-size: normal;
   font-family: "Chakra Petch", sans-serif;
   margin: 8px;
+  text-decoration: none;
 }
 footer li {
   list-style-type: none;
@@ -545,4 +547,24 @@ footer li {
 
 iframe {
   width: 100vh;
+}
+
+@media screen and (max-width: 1150px) and (min-width: 910px) {
+  .bye {
+    display: none;
+  }
+  .mostra {
+    display: flex;
+  }
+  .mostra button {
+    background-color: #96F2A6;
+    width: 56px;
+    height: 48px;
+    margin-right: 48px;
+    background-image: url(../img/menu.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+    border-radius: 8px;
+  }
 }/*# sourceMappingURL=style.css.map */

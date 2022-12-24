@@ -49,6 +49,10 @@ body::-webkit-scrollbar-button {
   display: none;
 }
 
+.nav-mob {
+  display: none;
+}
+
 h1 {
   font-family: "Abril Fatface", cursive;
   text-align: center;
@@ -108,6 +112,7 @@ header section a {
   text-decoration: none;
   color: black;
   border-radius: 8px;
+  text-align: center;
 }
 header section #consultar {
   background-color: #007c15;
@@ -167,7 +172,7 @@ header section p {
   transition: opacity 1s;
   font-family: "Chakra Petch", sans-serif;
   text-shadow: 1px 1px 1px rgb(5, 5, 5);
-  font-size: 1.7em;
+  font-size: 1.4em;
   padding: 16px;
 }
 #main #caixas .bens p {
@@ -204,7 +209,7 @@ header section p {
 }
 #main #container section[id|=text-main] {
   display: none;
-  width: 60%;
+  width: 900px;
   color: #96F2A6;
   text-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
@@ -258,14 +263,23 @@ header section p {
   margin-top: 400px;
   font-size: x-large;
 }
+#servicos #cont-serv::-webkit-scrollbar {
+  background-color: transparent;
+}
+#servicos #cont-serv::-webkit-scrollbar-thumb {
+  background-color: #47734E;
+  border-radius: 16px;
+  margin: 5px;
+}
 #servicos #cont-serv {
   margin: 0 56px;
-  height: inherit;
+  height: 90%;
   flex-wrap: wrap;
   display: flex;
   width: auto;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
 }
 #servicos #cont-serv aside {
   transition: box-shadow 0.5s;
@@ -294,7 +308,9 @@ header section p {
 }
 
 #sobre_nos {
-  display: flex;
+  display: grid;
+  box-shadow: -1px 1px 11px 0px rgba(72, 71, 71, 0.4784313725);
+  grid-template-columns: 50% 50%;
   background-color: rgb(240, 240, 240);
   line-height: 2em;
   text-indent: 20px;
@@ -304,9 +320,6 @@ header section p {
   font-size: xx-large;
   text-align: left;
   padding: 8px;
-}
-#sobre_nos img {
-  width: 50%;
 }
 #sobre_nos #text_about {
   padding: 8px;
@@ -362,8 +375,48 @@ header section p {
   color: black;
 }
 
+#corpo_clinico {
+  margin-top: 10vh;
+  padding: 56px;
+  display: grid;
+  width: 100vw;
+}
+#corpo_clinico #funcionarios {
+  justify-self: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+#corpo_clinico #funcionarios .medico {
+  display: grid;
+  width: 400px;
+  margin: 56px;
+  text-align: center;
+  padding: 8px;
+  transition: background-color 1s;
+  border-radius: 8px 16px;
+}
+#corpo_clinico #funcionarios .medico img {
+  background-color: grey;
+  justify-self: center;
+  height: 100px;
+  padding: 16px;
+  border-radius: 50%;
+}
+#corpo_clinico #funcionarios .medico h1 {
+  color: #47734E;
+}
+#corpo_clinico #funcionarios .medico .nome_medico {
+  color: black;
+  font-family: "Kdam Thmor Pro", sans-serif;
+  font-size: medium;
+}
+#corpo_clinico #funcionarios .medico:hover {
+  background-color: #96F2A6;
+  box-shadow: -1px 1px 11px 0px rgba(72, 71, 71, 0.4784313725);
+}
+
 #noticia {
-  background-image: url("../img/m6.jpg");
+  background-image: url("../img/m01.jpg");
   background-size: cover;
   background-position: 100% 30%;
   background-attachment: fixed;
@@ -428,7 +481,7 @@ header section p {
 #noticia #color_noticia #scroll_noticias #n_recente .artigo {
   display: flex;
   justify-content: center;
-  width: 500px;
+  width: 600px;
   margin: 16px 0;
 }
 #noticia #color_noticia #scroll_noticias #n_recente .artigo .img_noticia {
@@ -441,6 +494,7 @@ header section p {
 #noticia #color_noticia #scroll_noticias #n_enfase {
   padding: 24px;
   width: 50vw;
+  min-width: 700px;
   height: inherit;
 }
 #noticia #color_noticia #scroll_noticias #n_enfase h1 {
@@ -549,12 +603,64 @@ iframe {
   width: 100vh;
 }
 
+@-webkit-keyframes menu {
+  to {
+    width: 400px;
+  }
+}
+
+@keyframes menu {
+  to {
+    width: 400px;
+  }
+}
 @media screen and (max-width: 1150px) and (min-width: 910px) {
   .bye {
     display: none;
   }
+  .nav-mob {
+    box-shadow: -1px 1px 11px 0px rgba(72, 71, 71, 0.4784313725);
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #96F2A6;
+    height: 100vh;
+    max-width: 300px;
+    justify-content: center;
+    padding: 26px;
+    align-items: flex-start;
+    border-radius: 4px;
+    width: 0;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+  }
+  .nav-mob div {
+    display: grid;
+  }
+  .nav-mob div button {
+    width: 32px;
+    height: 32px;
+    margin: 8px;
+  }
+  .nav-mob h1 {
+    background-color: #007c15;
+    width: 100%;
+    border-radius: 16px;
+    color: white;
+  }
+  .nav-mob a {
+    padding: 8px;
+    margin: 4px;
+    width: 300px;
+    border: 0.1px solid rgb(90, 150, 90);
+  }
   .mostra {
     display: flex;
+    height: auto;
+    justify-content: center;
   }
   .mostra button {
     background-color: #96F2A6;
@@ -566,5 +672,54 @@ iframe {
     background-size: contain;
     background-position: 50% 50%;
     border-radius: 8px;
+  }
+  #main #container {
+    width: 0vw;
+  }
+  #main #container section[id|=text-main] {
+    width: 90%;
+  }
+  #main #container section[id|=text-main] h1 {
+    text-align: start;
+  }
+  #main #caixas {
+    width: 96vw;
+  }
+  #sobre_nos {
+    grid-template-columns: 90vw;
+  }
+  #sobre_nos img {
+    height: 60vh;
+    width: 100vw;
+  }
+  #noticia {
+    height: 170vh;
+  }
+  #noticia #color_noticia {
+    height: auto;
+  }
+  #noticia #color_noticia #scroll_noticias {
+    flex-wrap: wrap;
+    overflow-y: auto;
+    justify-content: center;
+  }
+  #noticia #color_noticia #scroll_noticias #n_enfase {
+    display: grid;
+  }
+  #noticia #color_noticia #scroll_noticias #n_enfase .artigo {
+    justify-self: center;
+  }
+  #noticia #color_noticia #scroll_noticias #n_recente {
+    width: 90vw;
+  }
+  #noticia #color_noticia #scroll_noticias #n_recente #ver_mais_noticias {
+    text-align: center;
+    font-size: larger;
+  }
+  #noticia #color_noticia #scroll_noticias #n_recente .artigo {
+    width: auto;
+  }
+  footer {
+    width: 100vw;
   }
 }/*# sourceMappingURL=style.css.map */

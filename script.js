@@ -70,11 +70,15 @@ let i_btn=1;
 function menu(n){
     i_btn*=n
     let btn_menu = document.getElementById('btn_menu')
-    console.log(btn_menu)
+    let nav_mob = document.getElementsByClassName('nav-mob')[0] 
     if(i_btn==-1){
-    btn_menu.style.backgroundImage="url(../img/close_menu.png)"
+    nav_mob.style.display='grid'
+    nav_mob.style.animationName='menu'
+    nav_mob.focus()
+  
     }
     else{
-        btn_menu.style.backgroundImage="url(../img/menu.png)"
+        btn_menu.style.backgroundImage="url(./img/menu.png)"
+        nav_mob.style.display='none'
     }
 }

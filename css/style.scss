@@ -36,6 +36,9 @@ body::-webkit-scrollbar-button{
 .mostra{
     display: none;
 }
+.nav-mob{
+    display: none;
+}
 h1{
     font-family: $font-titulo;
     text-align: center;
@@ -82,6 +85,7 @@ z-index: 1;
             text-decoration: none;
             color: $color_bl;
             border-radius: 8px;
+            text-align: center;
         }
       
         #consultar{
@@ -139,7 +143,7 @@ z-index: 1;
             transition: opacity 1s;
             font-family: $font-normal;
             text-shadow: 1px 1px 1px rgb(5, 5, 5);
-            font-size: 1.7em;
+            font-size: 1.4em;
             padding: 16px;
             p{
                 text-align: center;
@@ -172,10 +176,10 @@ z-index: 1;
             display: inline;
         }
         //text-main
-        section[id|="text-main"]{   
-            
+        section[id|="text-main"]{ 
             display: none; 
-            width: 60%;
+            width: 900px;
+            
             color: $color2;
             text-shadow: 1px 1px 1px rgb(0, 0, 0);
             h1{
@@ -227,9 +231,18 @@ z-index: 1;
     height: 100vh;
     margin-top: 400px;
     font-size: x-large;
+    #cont-serv::-webkit-scrollbar{
+        background-color:transparent;
+    }
+    #cont-serv::-webkit-scrollbar-thumb{
+        background-color: $color4;
+        border-radius: 16px;
+        margin: 5px;
+    }
     #cont-serv{
         margin: 0 56px;
-        @include cont_flex(auto,$horizontal: center,$number: false,$wrap:wrap);
+        @include cont_flex(auto,90%,$horizontal: center,$number: false,$wrap:wrap);
+        overflow-y:auto;
         aside{
             transition: box-shadow .5s;
             display: grid;
@@ -265,7 +278,9 @@ z-index: 1;
 
 }
 #sobre_nos{
-    display: flex;
+    display: grid;
+    @include box-sombra;
+    grid-template-columns: 50% 50%;
     background-color: rgb(240, 240, 240);
     line-height: 2em;
     text-indent: 20px;
@@ -274,9 +289,6 @@ z-index: 1;
         font-size: xx-large;
         text-align: left;
         padding: 8px;
-    }
-    img{
-        width: 50%;
     }
     #text_about{
         padding: 8px;
@@ -337,8 +349,49 @@ z-index: 1;
 
 
 }
+#corpo_clinico {
+    margin-top: 10vh;
+    padding: 56px;
+    display: grid;
+    width: 100vw;
+    #funcionarios{
+        justify-self: center;
+        display:flex;
+        flex-wrap: wrap;
+        .medico{
+            display: grid;
+            width: 400px;
+            margin: 56px;
+            text-align: center;
+            padding: 8px;
+            transition: background-color 1s;
+            border-radius: 8px 16px;
+            img{
+                background-color: grey;
+                justify-self: center;
+                height: 100px;
+                padding: 16px;
+                border-radius: 50%;
+            };
+            h1{
+                color: $color4;
+            }
+            .nome_medico{
+                color: black;
+                font-family: $font-especial;
+                font-size: medium;
+            
+            }
+
+        }
+        .medico:hover{
+            background-color: $color2;
+            @include box-sombra;
+        }
+    }
+}
 #noticia{
-    background-image: url('../img/m6.jpg');
+    background-image: url('../img/m01.jpg');
     background-size:cover;
     background-position:100% 30%;
     background-attachment: fixed;
@@ -360,7 +413,6 @@ z-index: 1;
             font-size: smaller;
         }
         #scroll_noticias{
-            
             display: flex;
             justify-content: center;
             height: inherit;
@@ -381,9 +433,7 @@ z-index: 1;
                     margin: 16px;
                     border-radius: 4px;
                 }
-                .texto_enfase{
-                    
-                }
+                
             }
             #n_recente::-webkit-scrollbar{
                 background-color:transparent;
@@ -413,7 +463,7 @@ z-index: 1;
                 .artigo{
                     display: flex;
                     justify-content: center;
-                    width: 500px;
+                    width: 600px;
                     margin: 16px 0;
                     .img_noticia{
                         background-color: #afafaf;
@@ -428,6 +478,7 @@ z-index: 1;
             #n_enfase{
                 padding: 24px;
                 width: 50vw;
+                min-width: 700px;
                 height: inherit;
                 h1{
                     font-size: x-large;
@@ -549,13 +600,61 @@ iframe{
     width: 100vh;
 }
 
-
+@keyframes menu {
+    to{width: 400px;}
+}
 @media screen and (max-width: 1150px) and (min-width: 910px){
     .bye{
         display: none;
     }
+    
+    .nav-mob{
+        @include box-sombra();
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: $color2;
+        height: 100vh;
+        max-width: 300px;
+        justify-content: center;
+        padding: 26px;
+        align-items: flex-start;
+        border-radius: 4px;
+        width: 0;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        div{
+            display: grid;
+            button{
+                width: 32px;
+                height: 32px;
+                
+            
+                margin: 8px;
+            }
+        }
+        h1{
+            background-color:$color1;
+            width: 100%;
+            border-radius: 16px;
+            color: white;
+        }
+        a{
+            padding: 8px;
+            margin: 4px;
+            width: 300px;
+            border: 0.1px solid rgb(90, 150, 90);
+            
+        }
+      
+    }
+
     .mostra{
         display: flex;
+        height: auto;
+        justify-content: center;
+       
         button{
             background-color: $color2;
             width: 56px;
@@ -566,11 +665,67 @@ iframe{
             background-size: contain;
             background-position: 50% 50%;
             border-radius: 8px ;
+          
             
         }
-     
-    
+        
     }
+  #main{
+    #container{
+        width:0vw;
+        section[id|="text-main"]{
+        width: 90%;
+            h1{
+            text-align: start;
+        }
+    }
+    }
+    #caixas{
+        width: 96vw;
+        
+      }
+   
+  }
+#sobre_nos{
+    grid-template-columns: 90vw;
+    img{
+        height: 60vh;
+        width: 100vw;
+    }
+
+}
+#noticia{
+    height: 170vh;
+    #color_noticia{
+        height:auto;
+
+    #scroll_noticias{
+    flex-wrap: wrap;
+    overflow-y:auto;
+    justify-content: center;
+    #n_enfase{
+        display: grid ;
+        .artigo{
+            justify-self: center;
+        }
+    }
+    #n_recente{
+        width: 90vw;
+        #ver_mais_noticias{
+            text-align: center;
+            font-size: larger;
+        }
+        .artigo{
+           width: auto;
+        }
+    }
+    }
+}
+
+}
+footer{
+    width: 100vw ;
+}
     
 }
 @media screen and (max-width: 909px) and (min-width: 90px){

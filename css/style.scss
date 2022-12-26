@@ -761,8 +761,9 @@ footer{
     }
    
     #main{
-        font-size: small;
+        font-size: x-small;
         height: 70vh;
+        margin-top: 72px;
         #container{
             padding: 16px;
             #nav-main{
@@ -800,5 +801,12 @@ footer{
     }
    #servicos{
     padding-top: 100px;
+    margin-top: 300px;
+    #cont_serv{
+        flex-wrap: nowrap;
+        aside{
+            width: 124px;
+        }
+    }
    }
 }

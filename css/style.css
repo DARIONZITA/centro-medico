@@ -738,8 +738,9 @@ iframe {
     background-color: red;
   }
   #main {
-    font-size: small;
+    font-size: x-small;
     height: 70vh;
+    margin-top: 72px;
   }
   #main #container {
     padding: 16px;
@@ -767,5 +768,12 @@ iframe {
   }
   #servicos {
     padding-top: 100px;
+    margin-top: 300px;
+  }
+  #servicos #cont_serv {
+    flex-wrap: nowrap;
+  }
+  #servicos #cont_serv aside {
+    width: 124px;
   }
 }/*# sourceMappingURL=style.css.map */

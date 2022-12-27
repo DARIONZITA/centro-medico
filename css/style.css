@@ -69,7 +69,7 @@ a:-webkit-any-link:focus-visible {
 }
 
 header {
-  height: 88px;
+  height: 11vh;
   flex-wrap: nowrap;
   display: flex;
   width: 100vw;
@@ -129,7 +129,7 @@ header section #consultar:active {
 }
 header section img {
   width: 20vw;
-  min-width: 200px;
+  min-width: 170px;
   margin-top: 8px;
 }
 header section p {
@@ -138,14 +138,18 @@ header section p {
   color: rgba(0, 0, 0, 0.432);
 }
 
-#main {
+main {
+  height: auto;
+}
+main #main {
   width: 100vw;
-  height: 100vh;
+  height: 110vh;
   background-color: #47734E;
   color: black;
+  display: grid;
   position: relative;
+  align-items: center;
   z-index: 0;
-  margin-top: 64px;
   transition: background-image 1s;
   text-indent: 30px;
   background-image: url("../img/m1.jpg");
@@ -153,32 +157,29 @@ header section p {
   background-position: center left;
   background-attachment: fixed;
 }
-#main #container {
+main #main #container {
+  padding-left: 56px;
   display: grid;
   font-size: xx-large;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 15%;
-  padding-left: 56px;
 }
-#main #container #text-main-1 {
+main #main #container #text-main-1 {
   display: inline;
 }
-#main #container section[id|=text-main] {
+main #main #container section[id|=text-main] {
   display: none;
   width: 900px;
   color: #96F2A6;
   text-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
-#main #container section[id|=text-main] h1 {
+main #main #container section[id|=text-main] h1 {
   font-size: 1.9em;
 }
-#main #container section[id|=text-main] p {
+main #main #container section[id|=text-main] p {
   color: white;
   font-size: larger;
 }
-#main #container #nav-main {
-  height: 300px;
+main #main #container #nav-main {
+  height: auto;
   flex-wrap: nowrap;
   display: flex;
   width: 100vw;
@@ -186,7 +187,7 @@ header section p {
   align-items: start;
   margin-top: 16px;
 }
-#main #container #nav-main button {
+main #main #container #nav-main button {
   width: 72px;
   height: 72px;
   background-color: white;
@@ -201,32 +202,31 @@ header section p {
   background-position: center center;
   background-size: 64px 64px;
 }
-#main #container #nav-main #mm1 {
+main #main #container #nav-main #mm1 {
   background-image: url("../img/icon/f0.png");
 }
-#main #container #mm2 {
+main #main #container #mm2 {
   background-image: url("../img/icon/f1.png");
 }
-#main #container #mm3 {
+main #main #container #mm3 {
   background-image: url("../img/icon/f2.png");
 }
-#main #container #mm4 {
+main #main #container #mm4 {
   background-image: url("../img/icon/f3.png");
 }
-
-#caixas {
-  height: 320px;
+main #caixas {
+  height: auto;
   flex-wrap: nowrap;
   display: flex;
   width: 100vw;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  bottom: -30%;
-  padding: 0 8px;
+  padding: 8px;
   z-index: 0;
+  position: relative;
+  top: -200px;
 }
-#caixas .bens {
+main #caixas .bens {
   width: 400px;
   height: 400px;
   background-color: #007c15;
@@ -238,32 +238,31 @@ header section p {
   font-size: 1.4em;
   padding: 16px;
 }
-#caixas .bens p {
+main #caixas .bens p {
   text-align: center;
 }
-#caixas .bens img {
+main #caixas .bens img {
   width: 56px;
 }
-#caixas .bens h1 {
+main #caixas .bens h1 {
   font-family: "Abril Fatface", cursive;
 }
-#caixas .bens:hover {
+main #caixas .bens:hover {
   opacity: 100%;
   box-shadow: -1px 1px 11px 0px rgba(72, 71, 71, 0.4784313725);
 }
-#caixas #ben3 {
+main #caixas #ben3 {
   background-color: #007c15;
 }
-#caixas #ben2 {
+main #caixas #ben2 {
   background-color: #00550e;
 }
-#caixas #ben1 {
+main #caixas #ben1 {
   background-color: #01420c;
 }
 
 #servicos {
   height: 100vh;
-  margin-top: 400px;
   font-size: x-large;
 }
 #servicos #cont-serv::-webkit-scrollbar {
@@ -674,20 +673,24 @@ iframe {
   .mostra .show {
     visibility: visible;
     opacity: 100%;
-    width: 400px;
+    width: 70%;
   }
-  #main #container {
+  main #main #container {
     font-size: 1.6em;
-    width: 0vw;
+    padding-left: 16px;
+    width: 100vw;
   }
-  #main #container section[id|=text-main] {
+  main #main #container section[id|=text-main] {
     width: 90%;
   }
-  #main #container section[id|=text-main] h1 {
+  main #main #container section[id|=text-main] h1 {
     text-align: start;
   }
-  #caixas {
+  main #caixas {
     width: 96vw;
+  }
+  main #caixas .bens {
+    font-size: 1.2em;
   }
   #sobre_nos {
     grid-template-columns: 90vw;
@@ -733,42 +736,39 @@ iframe {
     justify-content: space-between;
   }
 }
-@media screen and (max-width: 909px) and (min-width: 90px) {
+@media screen and (max-width: 700px) and (min-width: 90px) {
   header {
     background-color: red;
   }
-  #main {
+  header img {
+    width: 30%;
+  }
+  main #main {
+    height: 97vh;
     font-size: x-small;
-    height: 70vh;
-    margin-top: 72px;
+    align-items: flex-start;
+    padding-top: 40%;
   }
-  #main #container {
-    padding: 16px;
+  main #main #container #nav-main button {
+    width: 35px;
+    height: 35px;
+    background-size: 100%;
   }
-  #main #container #nav-main button {
-    width: 50px;
-    height: 50px;
-  }
-  #caixas {
+  main #caixas {
     font-size: 0.7em;
     display: grid;
     grid-template-columns: 100vw;
     justify-items: center;
-    padding: 0 4px;
-    position: relative;
+    padding: 4px;
     margin: 0;
   }
-  #caixas .bens {
+  main #caixas .bens {
     width: 99%;
-    height: 30vh;
     opacity: 100%;
+    height: 200px;
   }
-  #caixas .bens img {
+  main #caixas .bens img {
     width: 24px;
-  }
-  #servicos {
-    padding-top: 100px;
-    margin-top: 300px;
   }
   #servicos #cont_serv {
     flex-wrap: nowrap;

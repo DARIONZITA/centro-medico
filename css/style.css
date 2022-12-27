@@ -704,7 +704,7 @@ iframe {
     height: 150px;
   }
   #sobre_nos {
-    grid-template-columns: 90vw;
+    grid-template-columns: 98vw;
   }
   #sobre_nos img {
     height: 40vh;

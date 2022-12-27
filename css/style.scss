@@ -231,6 +231,8 @@ main{
 
 #servicos {
     height: 100vh;
+    position: relative;
+    top:-180px;
     font-size: x-large;
     #cont-serv::-webkit-scrollbar{
         background-color:transparent;
@@ -242,9 +244,8 @@ main{
     }
     #cont-serv{
         margin: 0 56px;
-        @include cont_flex(auto,90%,$horizontal: center,$number: false,$wrap:wrap);
+        @include cont_flex(auto,100%,$horizontal: center,$number: false,$wrap:wrap);
         overflow-y:auto;
-        min-width: 816px;
         aside{
             transition: box-shadow .5s;
             display: grid;
@@ -260,8 +261,7 @@ main{
             }
             p{
                 transform: translateY(64%);
-           
-                background-color: $color2;
+                background-color: #afafaf;
                 text-align: center;
                 vertical-align:bottom ;
                 align-self: center;
@@ -286,7 +286,7 @@ main{
     background-color: rgb(240, 240, 240);
     line-height: 2em;
     text-indent: 20px;
-    padding: 56px;
+   
     h1{
         font-size: xx-large;
         text-align: left;
@@ -294,6 +294,7 @@ main{
     }
     #text_about{
         padding: 8px;
+        margin: 0 8px 56px 56px;
     }
 
 }
@@ -403,7 +404,7 @@ main{
     background-position:100% 30%;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    height: 70vh;
+    height: 80vh;
     font-size: large;
     position: relative;
     
@@ -411,7 +412,7 @@ main{
         position: absolute;
         top: 0;
         width: 100%;
-        height: inherit;
+        height: 100%;
         background-color: rgba(127, 255, 212, 0.649);
         text-shadow: 1px 1px 1px $color_wt;
         
@@ -420,9 +421,10 @@ main{
             font-size: smaller;
         }
         #scroll_noticias{
-            display: flex;
-            justify-content: center;
+            display: grid;
+            justify-items: center;
             height: inherit;
+            grid-template-columns: 50% 50%;
            
             .artigo:hover{
                 @include box-sombra;
@@ -454,10 +456,10 @@ main{
             #n_recente{
                 padding-top: 24px;
                 display: grid;
-                width: 50vw;
-                justify-content: flex-start;
-                align-content: start-end ;
+                justify-items: flex-start;
+                align-items: start-end ;
                 overflow-y: auto;
+                height: 90%;
 
                 #ver_mais_noticias{
                     text-align: end;
@@ -470,22 +472,21 @@ main{
                 .artigo{
                     display: flex;
                     justify-content: center;
-                    width: 600px;
+                    width:45vw;
+                    height: 130px;
                     margin: 16px 0;
                     .img_noticia{
                         background-color: #afafaf;
-                        width: 500px;
-                        height: 100px;
+                        width:50%;
+                        height: 010px;
                         background-image: url('../img/arquvo2.png');
                         background-repeat: no-repeat;
                     }
-               
+                    
                 }
             }
             #n_enfase{
                 padding: 24px;
-                width: 50vw;
-                min-width: 700px;
                 height:auto;
                 h1{
                     font-size: x-large;
@@ -496,7 +497,7 @@ main{
                     justify-content: center;
                     align-content: flex-start;
                     width: 75%;
-                    height: auto;
+                    height: 480px;
                     margin: 16px;
                     padding: 2px;
                     border-radius: 1px;
@@ -528,8 +529,8 @@ footer{
     background-color: $color5;
     display: grid;
     color: white;
-    padding: 0 56px;
     text-shadow: 1px 1px 1px black;
+    justify-content: center;
     h1{
         font-weight: lighter;
         font-size: x-large;
@@ -540,8 +541,10 @@ footer{
         text-indent: 8px;
     }
     #top_footer{
+        justify-self: center;
         display:grid;
-        width: 100vw;
+        width: 90vw;
+        padding: 0 56px;
         grid-template-columns: 250px 300px 250px auto;
         ul{
             display: grid;
@@ -573,10 +576,8 @@ footer{
         }
         #logo{
             justify-self: flex-end;
-            img{
-                width: 550px;
-                padding-right: 100px;
-            }
+            margin: 56px 56px 0 0;
+            min-width: 300px;
         }
     }
     #bottom_footer{
@@ -700,28 +701,39 @@ iframe{
     width: 96vw;   
     .bens{
         font-size: 1.2em;
+       
     } 
   }
+}
+#servicos{
+    #cont-serv{
+        margin: 0;
+        width: 100vw;
+        aside{
+            width: 150px;
+            height: 150px;
+            
+        }
+    }
+
 }
    
 #sobre_nos{
     grid-template-columns: 90vw;
     img{
-        height: 60vh;
+        height: 40vh;
         width: 100vw;
     }
 
 }
 #noticia{
-    height: 170vh;
-    #color_noticia{
-        height:170vh;
-        overflow-y:auto;
+    height: 100vh;
+    #color_noticia{ 
 
     #scroll_noticias{
-    flex-wrap: wrap;
+    grid-template-columns: 90vw;
     
-    justify-content: center;
+    justify-items: center;
     #n_enfase{
         display: grid ;
         .artigo{
@@ -730,13 +742,20 @@ iframe{
     }
     #n_recente{
         width: 90vw;
-        height: 70vh;
         #ver_mais_noticias{
             text-align: center;
             font-size: larger;
+            width: 90vw;
+
         }
+        #ver_mais_noticias:hover{
+            text-shadow: 1px 1px 1px black;
+            color: $color_wt;
+        }
+
         .artigo{
            width: auto;
+           margin-left: 16px;
         }
     }
     }
@@ -747,20 +766,21 @@ footer{
     width: 100vw ;
     padding: 0;
     #top_footer{
-        grid-template-columns: auto auto ;
+        grid-template-columns: auto 50% ;
         justify-content: space-between;
-        aside{
-            
+        #logo{
+            margin: 0;
+            padding: 0;
+        
         }
     }
 
 }
     
 }
-@media screen and (max-width: 700px) and (min-width: 90px){
+@media screen and (max-width: 666px) and (min-width: 90px){
     header{
-        background-color: red;
-        img{
+          img{
             width: 30%;
         }
     }
@@ -787,18 +807,13 @@ footer{
             grid-template-columns: 100vw;
             justify-items: center;
             padding: 4px;
-            margin: 0;
-        
             .bens{
                 img{
                     width: 24px;
                 }
-                width: 99%;
+                width: 97%;
                 opacity: 100%;
                 height: 200px;
-                
-              
-    
             }
         
         }  
@@ -806,11 +821,33 @@ footer{
    
    #servicos{
 
-    #cont_serv{
-        flex-wrap: nowrap;
+    #cont-serv{
+        display: grid;
+        grid-template-columns: auto auto auto;
         aside{
-            width: 124px;
+            width: 96px;
+            margin: 2px;
+            height: 96px;
+            img{
+                width: 50%;
+            }
+            p{
+              transform: translateY(0);
+              font-size:small;
+            }
         }
     }
    }
+#sobre_nos{
+    line-height: 1.5em;
+    h1{
+        width: 90vh;
+        font-size:1.4em;
+        text-indent: 0;
+    }
+    #text_about{
+        font-size: 1em;
+        margin-left: 8px;
+    }
+}
 }

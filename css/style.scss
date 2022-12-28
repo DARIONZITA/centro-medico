@@ -55,6 +55,7 @@ a:-webkit-any-link:focus-visible{
 header{
 @include cont_flex(100vw,11vh,space-between,$number:false);
 @include box-sombra;
+min-height: 48px;
 position: fixed;
 background-color: white;
 top:0px;
@@ -354,19 +355,20 @@ main{
 }
 #corpo_clinico {
     margin-top: 10vh;
-    padding: 56px;
     display: grid;
     width: 100vw;
     #funcionarios{
         justify-self: center;
-        display:flex;
-        flex-wrap: wrap;
-        width: 90vw;
+        display:grid;
+        grid-template-columns: auto auto auto;
+        width: 100vw;
+        gap: 56px;
+        justify-content: center;
         
         .medico{
             display: grid;
-            width: 200px;
-            margin: 56px;
+            width: 20vw;
+            
             text-align: center;
             padding: 8px;
             transition: background-color 1s;
@@ -374,7 +376,7 @@ main{
             img{
                 background-color: grey;
                 justify-self: center;
-                height: 100\px;
+                height: 100px;
                 padding: 16px;
                 border-radius: 50%;
             };
@@ -527,6 +529,53 @@ main{
     }
     
 }
+#principal_blog::-webkit-scrollbar{
+    background-color: transparent;
+    width: 10px;
+
+}
+#principal_blog::-webkit-scrollbar-thumb{
+    background-color: $color4;
+    border-radius: 16px;
+    margin: .5px;
+}
+#blog{
+    margin-top: 11vh;
+    box-sizing: border-box;
+    .header{
+        
+    }
+    #artigos{
+        display: flex;
+        flex-wrap: wrap;
+        
+        #principal_blog{
+            height: 90vh;
+            width: 70%;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        #menu_blog{
+            width: 25%;
+            padding-left: 20px;
+
+        }
+    
+    }
+    .fakeimg {
+        background-color: #aaa;
+        width: 100%;
+        padding: 20px;
+      }
+      .card {
+        background-color: white;
+        padding: 20px;
+        margin-top: 20px;
+     }
+     
+
+}
+
 footer{
     height: auto;
     background-color: $color5;
@@ -610,7 +659,7 @@ footer{
 
 }
 iframe{
-    width: 100vh;
+    width: 90vw;
 }
 
 @media screen and (max-width: 1150px) {
@@ -797,11 +846,13 @@ footer{
     }
    main{
     #main{
-        height: 97vh;
+      
+        height: 70vh;
         font-size: x-small;
         align-items: flex-start;
         padding-top:40%;
         #container{
+            
             #nav-main{
                 button{
                     width: 35px;
@@ -813,11 +864,13 @@ footer{
        
     }
      #caixas{
-            font-size: .7em;
-            display: grid;
-            grid-template-columns: 100vw;
-            justify-items: center;
-            padding: 4px;
+        top: -10vmax; 
+        font-size: .7em;
+        display: grid;
+        grid-template-columns: 100vw;
+        justify-items: center;
+        padding: 4px;
+            
             .bens{
                 img{
                     width: 24px;
@@ -831,8 +884,10 @@ footer{
 }
    
    #servicos{
+    top: 1vmax;
 
     #cont-serv{
+        height: 80vh;
         display: grid;
         grid-template-columns: auto auto auto;
         aside{
@@ -863,14 +918,23 @@ footer{
 }
 #noticia{
     height: 130vh;
+    box-sizing: border-box;
     #color_noticia{
         #scroll_noticias{
             font-size: 1em;
             #n_enfase{
+               
                 .artigo{
                     width: 100%;
+                    height: 300px;
+                    padding-bottom: 16px;
                     .texto_enfase{
-                        height: 100%;
+                        overflow: hidden;
+                        height: 90%;
+                        
+                    }
+                    .img_noticia{
+                        height: 20vh;
                     }
                 }
             }
@@ -878,16 +942,24 @@ footer{
                 .artigo{
                     height: auto;
                 .texto_enfase{
-                    height: 100%;
                     overflow-y: hidden;
+                    font-size:.7em;
                 }
                 .img_noticia{
-                    
+                    height: auto;
                    
                 }
             }
             }
 
+        }
+    }
+}
+#corpo_clinico{
+    #funcionarios{
+        grid-template-columns: 99vw;
+        .medico{
+            width: 100%;
         }
     }
 }
@@ -916,5 +988,13 @@ footer{
     height: 5vh;
     background-color: $color5;
    }
+}
+#blog{
+    #artigos{
+    #principal_blog, #menu_blog {   
+        width: 100%;
+        padding: 0;
+      }
+    }
 }
 }

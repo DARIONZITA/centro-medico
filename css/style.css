@@ -549,28 +549,46 @@ main #caixas #ben1 {
   box-sizing: border-box;
 }
 #blog #artigos {
+  display: grid;
+}
+#blog #artigos h1 {
+  text-align: left;
+  margin: 16px;
+  padding: 8px;
+  border-left: 8px solid #007c15;
+}
+#blog #artigos #destaque {
   display: flex;
   flex-wrap: wrap;
 }
+#blog #artigos #destaque .card {
+  width: 30vw;
+}
 #blog #artigos #principal_blog {
-  height: 90vh;
-  width: 70%;
-  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 96px;
   overflow-x: hidden;
 }
-#blog #artigos #menu_blog {
-  width: 25%;
-  padding-left: 20px;
-}
-#blog .fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
-}
-#blog .card {
+#blog #artigos .card {
   background-color: white;
   padding: 20px;
   margin-top: 20px;
+  width: 20vw;
+  min-width: 200px;
+}
+#blog #artigos .fakeimg {
+  box-sizing: border-box;
+  background-color: rgb(130, 179, 150);
+  width: 100%;
+  margin-bottom: 16px;
+  border-radius: 24px;
+}
+#blog #artigos .link_continuar {
+  display: block;
+  text-align: end;
+  text-decoration: none;
+  color: #007c15;
 }
 
 footer {
@@ -923,5 +941,12 @@ iframe {
   #blog #artigos #principal_blog, #blog #artigos #menu_blog {
     width: 100%;
     padding: 0;
+    margin: 0;
+  }
+  #blog #artigos #destaque .card {
+    width: 90vw;
+  }
+  #blog #artigos .card {
+    width: 90vw;
   }
 }/*# sourceMappingURL=style.css.map */

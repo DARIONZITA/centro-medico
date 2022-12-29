@@ -529,6 +529,7 @@ main{
     }
     
 }
+
 #principal_blog::-webkit-scrollbar{
     background-color: transparent;
     width: 10px;
@@ -546,33 +547,57 @@ main{
         
     }
     #artigos{
+        display: grid ;
+       
+        h1{
+            text-align: left;
+            margin: 16px;
+            padding: 8px;
+            border-left:8px solid $color1;
+       }
+       #destaque{
         display: flex;
         flex-wrap: wrap;
-        
-        #principal_blog{
-            height: 90vh;
-            width: 70%;
-            overflow-y: auto;
-            overflow-x: hidden;
+        .card{
+            width: 30vw;
         }
-        #menu_blog{
-            width: 25%;
-            padding-left: 20px;
-
-        }
-    
-    }
-    .fakeimg {
-        background-color: #aaa;
-        width: 100%;
-        padding: 20px;
-      }
-      .card {
-        background-color: white;
-        padding: 20px;
-        margin-top: 20px;
-     }
      
+       }
+        #principal_blog{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 96px;            
+            overflow-x: hidden;
+           
+            
+        }
+        .card {
+               
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            width: 20vw;
+            min-width: 200px;
+
+         }
+         .fakeimg {
+            box-sizing: border-box;
+            background-color: rgb(130, 179, 150);
+            width: 100%;
+            margin-bottom: 16px;
+
+            border-radius: 24px;
+          }
+         .link_continuar{
+            display: block;
+            text-align: end;
+            text-decoration: none;
+            color: $color1;
+         }
+       
+    }
+    
+   
 
 }
 
@@ -994,7 +1019,18 @@ footer{
     #principal_blog, #menu_blog {   
         width: 100%;
         padding: 0;
+        margin: 0;
+    
       }
+      #destaque{
+        .card{
+            width: 90vw;
+        }
+      }
+      .card{
+        width: 90vw;
     }
+    }
+    
 }
 }
